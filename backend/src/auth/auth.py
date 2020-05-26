@@ -34,6 +34,9 @@ class AuthError(Exception):
 def get_token_auth_header():
     """Obtains the Access Token from the Authorization Header
     """
+    """
+    code was obtained at https://github.com/udacity/FSND/blob/master/BasicFlaskAuth/app.py
+    """
     auth = request.headers.get('Authorization', None)
     if not auth:
         raise AuthError({
@@ -78,6 +81,9 @@ def get_token_auth_header():
 def check_permissions(permission, payload):
     """Checks the Access Token from a permission
     """
+    """
+    code was obtained at https://github.com/udacity/FSND/blob/master/BasicFlaskAuth/app.py
+    """
     if 'permissions' not in payload:
         raise AuthError({
             'code': 'invalid_claims',
@@ -108,7 +114,9 @@ def verify_decode_jwt(token):
     """Verify Access Token from the Authorization Header
 
     """
-
+    """
+    code was obtained at https://github.com/udacity/FSND/blob/master/BasicFlaskAuth/app.py
+    """
     jsonurl = urlopen(f'https://{AUTH0_DOMAIN}/.well-known/jwks.json')
     jwks = json.loads(jsonurl.read())
     unverified_header = jwt.get_unverified_header(token)
