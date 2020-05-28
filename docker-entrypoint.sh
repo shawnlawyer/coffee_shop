@@ -10,9 +10,9 @@ if [ ! -d 'logs' ]; then
 
 fi
 
-cd backend
+cd backend/src
 
-#python3 migrate.py db upgrade
+python3 migrate.py db upgrade
 
 cd  $HOME
 

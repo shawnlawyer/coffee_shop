@@ -137,3 +137,5 @@ postgres/
 .config/
 
 frontend/node_modules/
+
+backend/src/database/database.db
